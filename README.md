@@ -25,8 +25,22 @@ Starting from the initial 23 attributes, for the purpose of my analysis I've dec
 11) Tipo_movimento (transaction type)
 
 ## Cleaning the data
-Since the feature _Titolo_ contains in the same value different elements carried by the ISBD ([International Standard Bibliographic Description](https://en.wikipedia.org/wiki/International_Standard_Bibliographic_Description)), I had to perform some cleaning operations to extract the necessary
-information and put them each on a different column. 
+Since the feature _Titolo_ contains in the same value different elements carried by the ISBD ([International Standard Bibliographic Description](https://en.wikipedia.org/wiki/International_Standard_Bibliographic_Description)), e.g.: 
+
+![](/ISBD.png)
+
+I had to perform some cleaning operations to extract the necessary information and put them each on a different column. 
 
 I first worked on the single month, in order to verify the effectiveness of the cleaning operations, then I extended it to the other months.
 
+The information to be extracted from _Titolo_ are: author, publishing house and number of pages. For the first two, I solved using the _.split()_ method,
+whereas for the number of pages I had to go step by step building different regular expressions, in order to improve their efficiency.
+
+Since the records have not all been filled in the same way, the extraction of the number of pages does not work equally for all the records; 
+as a result there is a failure to extract the number of pages from _Titolo_, therefore null values are obtained.
+
+With the regular expression _pages_regex_ (please refer to lines 29-30 in the _january_extraction_example.py_ file), I obtained a __mean reduction of 16.50 %__ of the null values for the extraction of the number of pages, as we can see from the last column:
+
+![](/decrease_percentage.png)
+
+Nevertheless, the percentage of null values remains still high, especially when compared to the percentages relating to the extraction of the author and the publishing house (second and third column, respectively). 
