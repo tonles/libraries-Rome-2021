@@ -44,3 +44,5 @@ With the regular expression _pages_regex_ (please refer to lines 29-30 in the _j
 ![](/decrease_percentage.png)
 
 Nevertheless, the percentage of null values remains still high, especially when compared to the percentages relating to the extraction of the author and the publishing house (second and third column, respectively). 
+
+__To be continued...__
