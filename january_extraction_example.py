@@ -10,19 +10,9 @@ import re
 jan = pd.read_json('det_p_meseprec_02.json')
 jan_df = jan['tabella'].apply(pd.Series)
 
-# Grouping categories
+# Extracting only "book" category
 group_rule = jan_df.groupby(jan_df['Cod. tipo documento'])
 books = group_rule.get_group('LM').reset_index()
-audiobooks = group_rule.get_group('AU').reset_index()
-dvd = group_rule.get_group('DV').reset_index()
-videoregistrazione = group_rule.get_group('VR').reset_index()
-materiale_video = group_rule.get_group('MV').reset_index()
-cd = group_rule.get_group('CD').reset_index()
-compact = group_rule.get_group('AC').reset_index()
-materiale_grafico = group_rule.get_group('MG').reset_index()
-registrazione_sonora = group_rule.get_group('RI').reset_index()
-musica_stampa = group_rule.get_group('MS').reset_index()
-multimediale = group_rule.get_group('ML').reset_index()
 
 # Extracting author
 author = []
