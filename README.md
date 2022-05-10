@@ -27,7 +27,7 @@ Starting from the initial 23 attributes, for the purpose of my analysis I've dec
 ## Cleaning the data
 Since the feature _Titolo_ contains in the same value different elements carried by the ISBD ([International Standard Bibliographic Description](https://en.wikipedia.org/wiki/International_Standard_Bibliographic_Description)), e.g.: 
 
-![](/ISBD.png)
+![](/images/ISBD.png)
 
 I had to perform some cleaning operations to extract the necessary information and put them each on a different column. 
 
@@ -41,7 +41,7 @@ as a result there is a failure to extract the number of pages from _Titolo_, the
 
 With the regular expression _pages_regex_ (please refer to lines 29-30 in the _january_extraction_example.py_ file), I obtained a __mean reduction of 16.50 %__ of the null values for the extraction of the number of pages, as we can see from the last column:
 
-![](/decrease_percentage.png)
+![](/images/decrease_percentage.png)
 
 Nevertheless, the percentage of null values remains still high, especially when compared to the percentages relating to the extraction of the author and the publishing house (second and third column, respectively). 
 
