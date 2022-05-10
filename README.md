@@ -43,6 +43,19 @@ With the regular expression _pages_regex_ (please refer to lines 29-30 in the _j
 
 ![](/images/decrease_percentage.png)
 
-Nevertheless, the percentage of null values remains still high, especially when compared to the percentages relating to the extraction of the author and the publishing house (second and third column, respectively). 
+Nevertheless, the percentage of null values remains still high, especially when compared to the percentages relating to the extraction of the author and the publishing house (second and third column, respectively). This is due to the presence, in the dataset, of other elements besides books (e.g. movies, CDs, etc.) which do not include the attribute _number of pages_.
+
+The next step will therefore be to identify the different categories of objects present and extrapolate only the _book_ objects. 
+Please refer to the lines 14-15 of the _january_extraction_example.py_ file, where the book tag _LM_ was taken from the metadata included in the dataset.
+
+Finally, I created a single dataframe for the entire month containing the information relating to the book object and necessary for subsequent analysis 
+(please refer to lines 53-63 of the _january_extraction_example.py_ file).
+
+After adapting the script for each month of the year, I merged the resulting 12 dataframes into a single one for the whole year (please refer to the
+_df_merging.py_ file). The dimension of the new dataframe is of 250946 rows and now we can finally start with the exploration of the dataset!
+
+## Exploring the data
+
+
 
 __To be continued...__
