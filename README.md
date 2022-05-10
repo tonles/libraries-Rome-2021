@@ -55,7 +55,25 @@ After adapting the script for each month of the year, I merged the resulting 12 
 _df_merging.py_ file). The dimension of the new dataframe is of 250946 rows and now we can finally start with the exploration of the dataset!
 
 ## Exploring the data
+Let's first check for possible outliers for the _Eta'_utente_movimento_ (user age) attribute. From the following boxplot we can see the presence of
+some outliers (13):
 
+![](/images/outliers.png)
+
+After cleaning the 13 outliers, let's redo the boxplot for further verification:
+
+![](/images/outliers_cleaned.png)
+
+The new dataframe will now have a size of 250933 rows.
+
+Now let's see the types of users who borrow books. From the following bar chart, we can see how the majority of users belong to _BIBLIOTECA SOL_ type, 
+corresponding to 23.67% of the total users:
+
+![](/images/users.png)
+
+This typology indicates the inter-systemic loans made between libraries, therefore __we can think of investigating this aspect to understand if and how 
+loans between libraries could be optimized, in order to reduce waiting times for users and save shipments between libraries__.
+A direct consequence of this analysis could therefore be to understand how to better distribute the titles among the various libraries of the city. 
 
 
 __To be continued...__
